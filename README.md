@@ -1,3 +1,25 @@
+## How to run
+Firstly, run the following command to run necessary components
+```bash
+make start-docker
+``` 
+Please make sure those ports are available
+```
+MySQL: 3306
+Adminer: 8080
+Zookeeper: 2181
+Kafka: 9092
+Application: 3000
+```
+Secondly, start the application
+```
+make run-local
+```
+When finished, execute the following command to cleanup containers
+```
+make stop-docker
+```
+
 ## cURL
 ### Create new product
 ```bash
