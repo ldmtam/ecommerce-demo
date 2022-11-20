@@ -1,3 +1,18 @@
+## Sequence diagram
+### Create new product
+![Create new product](./diagram/create_product.png?raw=true)
+
+### Get product
+![Get product](./diagram/get_product.png?raw=true)
+
+### Search product
+![Search product](./diagram/search_product.png?raw=true)
+
+### Get user activities
+![Get user activities](./diagram/get_activities.png?raw=true)
+
+
+
 ## How to run
 Firstly, run the following command to run necessary components
 ```bash

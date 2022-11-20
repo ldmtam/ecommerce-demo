@@ -1,0 +1,31 @@
+@startuml
+actor user
+Participant backend
+Database mysql
+Queue kafka
+Participant consumer
+
+user -> backend: View a product
+activate backend
+backend -> mysql: Get product
+activate mysql
+alt Get product successfully
+    mysql --> backend: Return product data
+    group Async Processing
+        backend -> kafka: Produce user get activity
+        activate kafka
+        kafka -> consumer: Consume data
+        deactivate kafka
+        activate consumer
+        consumer -> mysql: Update user get actitivity
+        deactivate consumer
+    end
+    backend --> user: Return product info
+else Get product failed
+    mysql --> backend: Return error
+    backend --> user: Return error
+end
+deactivate mysql
+deactivate backend
+
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+actor admin
+Participant backend
+Database mysql
+
+admin -> backend: Create new product
+activate backend
+backend -> mysql: Insert product
+activate mysql
+alt insert successfully
+    mysql --> backend: Return product info
+    backend --> admin: Return product info
+else insert failed
+    mysql --> backend: Return error
+    backend --> admin: Return errror
+end
+deactivate mysql
+deactivate backend
+@enduml

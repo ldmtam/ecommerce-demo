@@ -1,0 +1,19 @@
+@startuml
+actor admin
+Participant backend
+Database mysql
+
+admin -> backend: Get user activities
+backend -> mysql: Get user activities
+activate backend
+activate mysql
+alt get successfully
+    mysql --> backend: Return user activities
+    backend --> admin: Return user activities
+else insert failed
+    mysql --> backend: Return error
+    backend --> admin: Return errror
+end
+deactivate mysql
+deactivate backend
+@enduml
