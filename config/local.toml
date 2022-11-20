@@ -1,0 +1,11 @@
+[setting]
+    log_path = "./logs"
+    port = 3000
+
+[mysql]
+    dsn = "root:example@tcp(127.0.0.1:3306)/ecommerce"
+
+[kafka]
+    brokers = ["127.0.0.1:9092"]
+    topic = "product-activities"
+    consumer_group = "user-activities-0001"
