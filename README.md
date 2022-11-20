@@ -9,7 +9,7 @@
 ![Search product](./diagram/search_product.png?raw=true)
 
 ### Get user activities
-![Get user activities](./diagram/get_activities.png?raw=true)
+![Get user activities](./diagram/get_activities2.png?raw=true)
 
 
 
